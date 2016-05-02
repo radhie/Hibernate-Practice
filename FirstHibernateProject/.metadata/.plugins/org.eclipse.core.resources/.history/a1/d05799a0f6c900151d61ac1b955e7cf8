@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-configuration PUBLIC  
+          "-//Hibernate/Hibernate Configuration DTD 3.0//EN"  
+          "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">  
+  
+<hibernate-configuration>  
+  
+    <session-factory>  
+    	<!--  <property name="hbm2ddl.auto">update</property>  -->
+        
+         <!-- hibernate.dialect This property makes Hibernate generate the appropriate SQL for the chosen database -->
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property> 
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!--  test is the database name --> 
+        <property name="connection.url">jdbc:mysql://localhost/test</property>  
+        <property name="connection.username">root</property>  
+        <property name="connection.password"></property>  
+        
+        <!-- Show all executed SQL to stdout -->
+         <property name="show_sql">true</property> 
+        
+        <!-- Drop and re-create the database schema on startup -->
+         <property name="hbm2ddl.auto">create</property> 
+          
+    <mapping resource="employee.hbm.xml"/>  
+    </session-factory>  
+  
+</hibernate-configuration> 
